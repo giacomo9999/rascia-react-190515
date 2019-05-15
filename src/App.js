@@ -3,12 +3,24 @@ import Table from "./Table";
 
 class App extends Component {
   render() {
+    const characters = [
+      {
+        name: "Charlie",
+        job: "Drug Dealer"
+      },
+      {
+        name: "Jennifer",
+        job: "Actress"
+      },
+      {
+        name: "Russell",
+        job: "Bouncer"
+      }
+    ];
     return (
       <div className="App">
-        
         <div className="container">
-        <h1>Hello React</h1>
-          <Table />
+          <Table characterData={characters} />
         </div>
       </div>
     );

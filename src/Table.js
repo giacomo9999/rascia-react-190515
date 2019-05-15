@@ -11,31 +11,17 @@ const TableHeader = () => {
   );
 };
 
-const TableBody = () => {
-  return (
-    <tbody>
-      <tr>
-        <td>Charlie</td>
-        <td>Drug Dealer</td>
-      </tr>
-      <tr>
-        <td>Russell</td>
-        <td>Bouncer</td>
-      </tr>
-      <tr>
-        <td>Jennifer</td>
-        <td>Actress</td>
-      </tr>
-    </tbody>
-  );
+const TableBody = props => {
+  return <tbody />;
 };
 
 class Table extends Component {
   render() {
+    const characterData = this.props;
     return (
       <table>
         <TableHeader />
-        <TableBody />
+        <TableBody characterData={characterData} />
       </table>
     );
   }
