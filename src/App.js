@@ -23,13 +23,13 @@ class App extends Component {
     console.log("Removing character...", charIndex);
     const { characters } = this.state;
     console.log(characters);
-    this.setState(
-      characters.filter((entry, index) => {
+    this.setState({
+      characters: characters.filter((entry, index) => {
         // console.log(index);
-        console.log(index !== charIndex)
+        console.log(index !== charIndex);
         return index !== charIndex;
       })
-    );
+    });
   };
 
   render() {
