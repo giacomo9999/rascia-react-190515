@@ -12,16 +12,23 @@ const TableHeader = () => {
 };
 
 const TableBody = props => {
-  return <tbody />;
+  console.log("Table Body Props:", props.characterData);
+  return (
+    <tr>
+      <td>Blah</td>
+      <td>Bouncer</td>
+    </tr>
+  );
 };
 
 class Table extends Component {
   render() {
-    const characterData = this.props;
+    // const characterData = this.props;
+    console.log("Table props:", this.props);
     return (
       <table>
         <TableHeader />
-        <TableBody characterData={characterData} />
+        <TableBody characterData={this.props} />
       </table>
     );
   }
