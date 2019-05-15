@@ -11,24 +11,32 @@ const TableHeader = () => {
   );
 };
 
-const TableBody = props => {
-  console.log("Table Body Props:", props.characterData);
-  return (
-    <tr>
-      <td>Blah</td>
-      <td>Bouncer</td>
-    </tr>
-  );
+const TableBody = dataIn => {
+  console.log("Table Body Props:", dataIn);
+  const rows = dataIn.characterData.map((entry, index) => {
+    return (
+      <tr key={index}>
+        <td>{entry.name}</td>
+        <td>{entry.job}</td>
+        <td>
+          <button onClick={() => dataIn.removeCharacter(index)}>Delete</button>
+        </td>
+      </tr>
+    );
+  });
+  return <tbody>{rows}</tbody>;
 };
 
 class Table extends Component {
   render() {
-    // const characterData = this.props;
-    console.log("Table props:", this.props);
+    const { characterData, removeCharacter } = this.props;
     return (
       <table>
         <TableHeader />
-        <TableBody characterData={this.props} />
+        <TableBody
+          characterData={characterData}
+          removeCharacter={removeCharacter}
+        />
       </table>
     );
   }
